@@ -48,9 +48,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-  const server = process.env.SERVER;
+
  
-  let res = await fetch(`${server}/api/posts`, {
+  let res = await fetch("https://wtt.vercel.app/api/posts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
