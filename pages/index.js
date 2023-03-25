@@ -87,7 +87,8 @@ export default function HomePage({ allPosts }) {
 
 export async function getStaticProps() {
 
-    const apiUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts` : 'http://localhost:3000/api/posts';
+   const apiUrl =`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts` 
+
 
     let res = await fetch(apiUrl, {
         method: "GET",

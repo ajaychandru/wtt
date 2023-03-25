@@ -52,7 +52,7 @@ const Post = ({ posts }) => {
 }
 
 export async function getStaticPaths() {
-  const apiUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts` : 'http://localhost:3000/api/posts';
+  const apiUrl =`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts` 
 
   let res = await fetch(apiUrl, {
     method: "GET",
@@ -60,8 +60,10 @@ export async function getStaticPaths() {
       "Content-Type": "application/json",
     },
   })
-  let posts = await res.json();
 
+ 
+  let posts = await res.json();
+  console.log(posts);
   const pathArray = posts.map((post) => {
     return ({
       params: {
@@ -78,8 +80,7 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps() {
-  const apiUrl = process.env.NEXT_PUBLIC_VERCEL_URL ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts` : 'http://localhost:3000/api/posts';
-
+  const apiUrl =`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts` 
   let res = await fetch(apiUrl, {
     method: "GET",
     headers: {
