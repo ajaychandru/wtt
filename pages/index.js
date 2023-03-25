@@ -18,14 +18,14 @@ export default function HomePage({ allPosts }) {
             <Grid className='container' container mt={4} spacing={2}>
                 {homePost.map((post, i) => {
                     const key = uuidv4();
-                    const cardContent=convert(post.postContent,{
+                    const cardContent = convert(post.postContent, {
                         selectors: [
-                            { selector: 'img',format:'skip' },
-                            {selector:'a',format:'skip'},
-                            {selector:'br',format:'skip'},
-                            
-                          ]
-                    }).substring(0,150);
+                            { selector: 'img', format: 'skip' },
+                            { selector: 'a', format: 'skip' },
+                            { selector: 'br', format: 'skip' },
+
+                        ]
+                    }).substring(0, 150);
                     if (i === 0) {
 
                         return (
@@ -35,14 +35,14 @@ export default function HomePage({ allPosts }) {
                         )
                     } else if (i == 1) {
                         return (
-                            <Grid  key={key} my={2} item xs={12} md={6}>
-                                <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8} imgMd={4} title={post.title}  content={cardContent} date={post.date} category={post.category} />
+                            <Grid key={key} my={2} item xs={12} md={6}>
+                                <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8} imgMd={4} title={post.title} content={cardContent} date={post.date} category={post.category} />
                             </Grid>
                         )
                     } else if (i === 2) {
                         return (
                             <Grid key={key} my={2} xs={12} item md={6}>
-                                <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8}  imgMd={4} title={post.title}  content={cardContent} date={post.date} category={post.category} />
+                                <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8} imgMd={4} title={post.title} content={cardContent} date={post.date} category={post.category} />
                             </Grid>
                         )
                     } else if (i === 3) {
@@ -50,12 +50,12 @@ export default function HomePage({ allPosts }) {
                             <Grid className='container16px' key={key} mt={4} container spacing={2}>
                                 <Grid item xs={12} md={8}>
 
-                                    <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8}  imgMd={4} key={post._id} title={post.title}  content={cardContent} date={post.date} category={post.category} />
+                                    <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8} imgMd={4} key={post._id} title={post.title} content={cardContent} date={post.date} category={post.category} />
 
                                 </Grid>
-                                <Grid item sx={{display:{sm:'none',md:"block"}}} md={4}>
+                                <Grid item sx={{ display: { sm: 'none', md: "block" } }} md={4}>
 
-                                    <AboutCard/>
+                                    <AboutCard />
 
                                 </Grid>
 
@@ -66,7 +66,7 @@ export default function HomePage({ allPosts }) {
                         return (
                             <Grid key={key} xs={12} item md={8}>
                                 <Grid my={2} xs={12} item md={12}>
-                                    <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8} imgMd={4} key={post._id} title={post.title}  content={cardContent} date={post.date} category={post.category} />
+                                    <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={8} imgMd={4} key={post._id} title={post.title} content={cardContent} date={post.date} category={post.category} />
                                 </Grid>
                             </Grid>
                         )
@@ -86,12 +86,13 @@ export default function HomePage({ allPosts }) {
 
 
 export async function getStaticProps() {
-   
-    let res = await fetch(`${process.env.API_BASE_URL}/api/posts`, {
+
+    let res = await fetch("https://wtt.vercel.app/api/posts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-        },
+        }, mode: 'cors', // enable CORS
+       
     });
     let allPosts = await res.json();
 

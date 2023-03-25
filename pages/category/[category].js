@@ -50,11 +50,13 @@ export async function getStaticPaths() {
 export async function getStaticProps() {
 
  
-  let res = await fetch(`${process.env.API_BASE_URL}/api/posts`, {
+  let res = await fetch("https://wtt.vercel.app/api/posts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
+    mode: 'cors' // enable CORS
+    // send cookies, if any
   });
   let posts = await res.json();
 
