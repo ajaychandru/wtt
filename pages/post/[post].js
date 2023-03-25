@@ -25,7 +25,7 @@ const Post = ({posts}) => {
           <Grid  item xs={12}>
             <Box sx={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
               <h1 className='postH1'>
-                {requiredPost[0].title}
+                {requiredPost.title}
               </h1>
 
               <h4>
@@ -37,7 +37,7 @@ const Post = ({posts}) => {
           </Grid>
           <Grid className='postContent'  item xs={12}>
 
-            {parse(requiredPost[0].postContent)}
+            {parse(requiredPost.postContent)}
 
 
           </Grid>
