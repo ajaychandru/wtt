@@ -54,7 +54,7 @@ const Post = ({ posts }) => {
 export async function getStaticPaths() {
   
 
-  let res = await fetch("https://wtt.vercel.app/api/posts", {
+  let res = await fetch(`${process.env.API_BASE_URL}/api/posts`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps() {
   
-  let res = await fetch("https://wtt.vercel.app/api/posts", {
+  let res = await fetch(`${process.env.API_BASE_URL}/api/posts`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

@@ -1,5 +1,7 @@
 module.exports = {
+    // other config options
     env: {
-      SERVER: process.env.SERVER,
-    },
-  };
+      API_BASE_URL: 'http://worldtechtravel.in/'
+    }
+  }
+  
