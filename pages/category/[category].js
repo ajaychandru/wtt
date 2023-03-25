@@ -5,9 +5,68 @@ import MediaCard from '../../components/Card'
 import { v4 as uuidv4 } from 'uuid';
 const { convert } = require('html-to-text');
 
-const Category = ({ posts }) => {
+const Category = () => {
   const router = useRouter()
   const { category } = router.query
+  const posts=[
+    {
+    _id: "641ee7c67cac17cc32c2a8bf",
+    title: "Statecraft |lessons from ancient india",
+    category: "world",
+    imgSrc: "/images/95801346.webp",
+    postContent:"hello",
+    date: "Mar 23"
+    },
+    {
+        _id: "641ee7c67cac17cc32c2a8bf",
+        title: "Statecraft |lessons from ancient india",
+        category: "world",
+        imgSrc: "/images/95801346.webp",
+        postContent:"hello",
+        date: "Mar 23"
+        },
+        {
+            _id: "641ee7c67cac17cc32c2a8bf",
+            title: "Statecraft |lessons from ancient india",
+            category: "world",
+            imgSrc: "/images/95801346.webp",
+            postContent:"hello",
+            date: "Mar 23"
+            },
+            {
+                _id: "641ee7c67cac17cc32c2a8bf",
+                title: "Statecraft |lessons from ancient india",
+                category: "world",
+                imgSrc: "/images/95801346.webp",
+                postContent:"hello",
+                date: "Mar 23"
+                },
+                {
+                    _id: "641ee7c67cac17cc32c2a8bf",
+                    title: "Statecraft |lessons from ancient india",
+                    category: "world",
+                    imgSrc: "/images/95801346.webp",
+                    postContent:"hello",
+                    date: "Mar 23"
+                    },
+                    {
+                        _id: "641ee7c67cac17cc32c2a8bf",
+                        title: "Statecraft |lessons from ancient india",
+                        category: "world",
+                        imgSrc: "/images/95801346.webp",
+                        postContent:"hello",
+                        date: "Mar 23"
+                        },
+                        {
+                            _id: "641ee7c67cac17cc32c2a8bf",
+                            title: "Statecraft |lessons from ancient india",
+                            category: "world",
+                            imgSrc: "/images/95801346.webp",
+                            postContent:"hello",
+                            date: "Mar 23"
+                            },
+    ]
+
   const categoryPost = posts.filter((element, i) => {
     return element.category === category
   })
@@ -39,32 +98,32 @@ const Category = ({ posts }) => {
 
   )
 }
-export async function getStaticPaths() {
+// export async function getStaticPaths() {
 
-  return {
-    paths: [{ params: { category: 'world' } }, { params: { category: 'tech' } }, { params: { category: 'travel' } }],
-    fallback: false, // can also be true or 'blocking'
-  }
-}
+//   return {
+//     paths: [{ params: { category: 'world' } }, { params: { category: 'tech' } }, { params: { category: 'travel' } }],
+//     fallback: false, // can also be true or 'blocking'
+//   }
+// }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
  
-  let res = await fetch("https://wtt.vercel.app/api/posts", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: 'cors' // enable CORS
-    // send cookies, if any
-  });
-  let posts = await res.json();
+//   let res = await fetch("https://wtt.vercel.app/api/posts", {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     mode: 'cors' // enable CORS
+//     // send cookies, if any
+//   });
+//   let posts = await res.json();
 
-  return {
-    props: {
-      posts,
-    },
-  }
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//   }
+// }
 
 export default Category;
