@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import styles from "./AppBar.module.css"
+import styles from "./Appbar.module.css"
 import HikingIcon from '@mui/icons-material/Hiking';
 
 const pages = [{ title: "World", href: "/category/world" }, { title: "Tech", href: "/category/tech" }, { title: "Travel", href: "/category/travel" }];
