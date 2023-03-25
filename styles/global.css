@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
+
+
+
+body{
+    background-color: #f7f7f7;
+    background-image: url("https://www.transparenttextures.com/patterns/graphcoders-lil-fiber.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    font-family: 'PT Serif', serif !important;
+ font-weight: 400;
+}
+
+
+.container{
+    padding: 0 32px;
+}
+.container16px{
+    padding: 0 16px;
+}
+
+/* post page css */
+
+.postH1{
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.postContent{
+    overflow-wrap: break-word;
+    text-align: justify;
+}
+.postContent img{
+    width: 250px;
+    height: 250px;
+  max-width: 100%;
+  height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
