@@ -48,9 +48,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-  const apiUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/posts`;
-EL_URL 
-  let res = await fetch(apiUrl, {
+  const server = process.env.SERVER;
+ 
+  let res = await fetch(`${server}/api/posts`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
