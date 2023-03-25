@@ -6,65 +6,8 @@ import Header from '../components/Header';
 import AboutCard from '../components/AboutCard';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function HomePage() {
-    const allPosts=[
-        {
-        _id: "641ee7c67cac17cc32c2a8bf",
-        title: "Statecraft |lessons from ancient india",
-        category: "world",
-        imgSrc: "/images/95801346.webp",
-        postContent:"hello",
-        date: "Mar 23"
-        },
-        {
-            _id: "641ee7c67cac17cc32c2a8bf",
-            title: "Statecraft |lessons from ancient india",
-            category: "world",
-            imgSrc: "/images/95801346.webp",
-            postContent:"hello",
-            date: "Mar 23"
-            },
-            {
-                _id: "641ee7c67cac17cc32c2a8bf",
-                title: "Statecraft |lessons from ancient india",
-                category: "world",
-                imgSrc: "/images/95801346.webp",
-                postContent:"hello",
-                date: "Mar 23"
-                },
-                {
-                    _id: "641ee7c67cac17cc32c2a8bf",
-                    title: "Statecraft |lessons from ancient india",
-                    category: "world",
-                    imgSrc: "/images/95801346.webp",
-                    postContent:"hello",
-                    date: "Mar 23"
-                    },
-                    {
-                        _id: "641ee7c67cac17cc32c2a8bf",
-                        title: "Statecraft |lessons from ancient india",
-                        category: "world",
-                        imgSrc: "/images/95801346.webp",
-                        postContent:"hello",
-                        date: "Mar 23"
-                        },
-                        {
-                            _id: "641ee7c67cac17cc32c2a8bf",
-                            title: "Statecraft |lessons from ancient india",
-                            category: "world",
-                            imgSrc: "/images/95801346.webp",
-                            postContent:"hello",
-                            date: "Mar 23"
-                            },
-                            {
-                                _id: "641ee7c67cac17cc32c2a8bf",
-                                title: "Statecraft |lessons from ancient india",
-                                category: "world",
-                                imgSrc: "/images/95801346.webp",
-                                postContent:"hello",
-                                date: "Mar 23"
-                                },
-        ]
+export default function HomePage({allPosts}) {
+   
 
     const homePost = allPosts.filter((post, i) => {
         return i <= 5;
@@ -144,18 +87,18 @@ export default function HomePage() {
 }
 
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
 
-//     let res = await fetch("https://wtt.vercel.app/api/posts", {
-//         method: "GET",
-//         headers: {
-//             "Content-Type": "application/json",
-//         }, mode: 'cors', // enable CORS
+    let res = await fetch("https://wtt-ajaychandru.vercel.app/api/posts", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        }, mode: 'cors', // enable CORS
        
-//     });
-//     let allPosts = await res.json();
+    });
+    let allPosts = await res.json();
 
-//     return {
-//         props: { allPosts },
-//     };
-// }
+    return {
+        props: { allPosts },
+    };
+}
