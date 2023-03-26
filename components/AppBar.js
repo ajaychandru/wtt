@@ -40,7 +40,7 @@ function ResponsiveAppBar() {
     <AppBar className={styles.navbar} elevation={4} position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <HikingIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+
           <Typography
             variant="h6"
             noWrap

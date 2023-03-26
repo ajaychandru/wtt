@@ -48,10 +48,10 @@ export default function MediaCard(props) {
                           
                             Share
                         </button>
-                        <button href={"/post/" + props.link} size='medium' color="#ffb8a8" variant="extended" aria-label={props.title}>
+                        <a href={"/post/" + props.link} size='medium' color="#ffb8a8" variant="extended" aria-label={props.title}>
                             
                             Read More
-                        </button>
+                        </a>
                     </CardActions>
                 </Grid>
             </Grid>

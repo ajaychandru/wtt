@@ -90,7 +90,7 @@ export default function HomePage({ allPosts }) {
 
 
 export async function getServerSideProps(context) {
-    let res = await fetch("http://worltechtravel.in/api/posts", {
+    let res = await fetch("http://worldtechtravel.in/api/posts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
