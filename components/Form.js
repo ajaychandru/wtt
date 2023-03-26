@@ -65,10 +65,11 @@ export default function Form() {
 
     async function submitPost() {
     
-      
+        const apiUrl="https://wtt-seven.vercel.app/api/posts"? "https://wtt-seven.vercel.app/":"https://wtt-ajaychandru.vercel.app/api/posts";
+
        
 
-        const res = await fetch("https://wtt-ajaychandru.vercel.app/api/posts", {
+        const res = await fetch(apiUrl, {
             method: "POST",
             body: JSON.stringify({ form }),
             headers: {
