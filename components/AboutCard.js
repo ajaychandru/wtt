@@ -8,7 +8,7 @@ import styles from "./Cards.module.css"
 
 export default function AboutCard() {
   return (
-    <Card sx={{ maxWidth: "100%" }} >
+    <Card sx={{ maxWidth: "100%" }} elevation={4} >
       <CardContent >
         <Typography  className={styles.font} textAlign="center" variant="h5" component="div">
           About

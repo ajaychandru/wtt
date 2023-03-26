@@ -16,7 +16,7 @@ export default function MediaCard(props) {
     // console.log(props)
     return (
 
-        <Card className={styles.font} sx={{ maxWidth: "100%", boxShadow: "10px", }}>
+        <Card className={styles.font} sx={{ maxWidth: "100%"}} elevation={4}>
 
             <Grid item container >
                 <Grid item xs={12} md={props.imgMd}>
@@ -44,12 +44,12 @@ export default function MediaCard(props) {
 
                     </CardContent>
                     <CardActions >
-                        <Fab  size='medium' sx={{ backgroundColor: "#ffb8a8" }} variant="extended">
-                            <ShareIcon size="medium" sx={{ mr: 1 }} />
+                        <Fab  variant="extended" size="medium" color="#ffb8a8" aria-label="share">
+                            <ShareIcon color="primary" size="medium" sx={{ mr: 1 }} />
                             Share
                         </Fab>
-                        <Fab href={"/post/" + props.link} size='medium' sx={{ backgroundColor: "#ffb8a8",marginLeft:".5rem" }} variant="extended" aria-label={props.title}>
-                            <ReadMoreIcon size='medium' sx={{ mr: 1 }} />
+                        <Fab href={"/post/" + props.link} size='medium' color="#ffb8a8" variant="extended" aria-label={props.title}>
+                            <ReadMoreIcon color="pri" size='medium' sx={{ mr: 1 }} />
                             Read More
                         </Fab>
                     </CardActions>
