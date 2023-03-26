@@ -1,13 +1,13 @@
 const { convert } = require('html-to-text');
-
+import Head from 'next/head'
 import MediaCard from '../components/Card';
 import Grid from '@mui/material/Grid';
 import Header from '../components/Header';
 import AboutCard from '../components/AboutCard';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function HomePage({allPosts}) {
-    
+export default function HomePage({ allPosts }) {
+
 
     const homePost = allPosts.filter((post, i) => {
         return i <= 5;
@@ -15,7 +15,9 @@ export default function HomePage({allPosts}) {
 
     return (
         <>
-
+            <Head>
+                <title>World Tech Travel</title>
+            </Head>
             <Header />
             <Grid className='container' container mt={4} spacing={2}>
                 {homePost.map((post, i) => {
@@ -87,13 +89,13 @@ export default function HomePage({allPosts}) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
     let res = await fetch("https://www.worldtechtravel.in/api/posts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         }, mode: 'cors', // enable CORS
-       
+
     });
     let allPosts = await res.json();
 
