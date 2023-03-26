@@ -47,7 +47,7 @@ export default function Form() {
             },
         };
 
-        const response = await axios.post('/api/upload', formData, config);
+        const response = await axios.post('https://www.worldtechtravel.in/api/upload', formData, config);
 
         const { data, file } = response.data;
         console.log(file);
