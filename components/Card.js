@@ -48,7 +48,7 @@ export default function MediaCard(props) {
                             <ShareIcon size="medium" sx={{ mr: 1 }} />
                             Share
                         </Fab>
-                        <Fab href={"/post/" + props.link} size='medium' sx={{ backgroundColor: "#ffb8a8",marginLeft:".5rem" }} variant="extended">
+                        <Fab href={"/post/" + props.link} size='medium' sx={{ backgroundColor: "#ffb8a8",marginLeft:".5rem" }} variant="extended" aria-label={props.title}>
                             <ReadMoreIcon size='medium' sx={{ mr: 1 }} />
                             Read More
                         </Fab>
