@@ -20,7 +20,7 @@ const Post = ({posts}) => {
       <Header />
       <Grid container>
 
-        <Grid sx={{ padding:"0 4rem", boxShadow: 1 }} container item xs={12} md={10} >
+        <Grid sx={{ padding:{xs:"0 1rem",sm:"0 1rem",md:"0 4rem"}, boxShadow: 1 }} container item xs={12} md={10} >
           <Grid  item xs={12}>
             <Box sx={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
               <h1 className='postH1'>
@@ -55,6 +55,7 @@ const Post = ({posts}) => {
 
 export async function getServerSideProps() {
   let res = await fetch("https://www.worldtechtravel.in/api/posts", {
+ 
     method: "GET",
     headers: {
       "Content-Type": "application/json",

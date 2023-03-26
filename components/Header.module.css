@@ -1,12 +1,14 @@
 .header{
+   
     height: 250px;
-    background-image: url("https://wallpaperaccess.com/full/4394883.jpg");
+    background-image: url("../public/images/backgroung.webp");
    background-position:52% 52%;
     background-repeat: no-repeat;
 }
 
 .header h1{
-    color: white;
+   
+    color: black;
     text-align: center;
     margin-top: 0px ;
 }
