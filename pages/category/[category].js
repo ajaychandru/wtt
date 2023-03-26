@@ -41,13 +41,7 @@ const Category = ({posts}) => {
 
   )
 }
-export async function getStaticPaths() {
 
-  return {
-    paths: [{ params: { category: 'world' } }, { params: { category: 'tech' } }, { params: { category: 'travel' } }],
-    fallback: false, // can also be true or 'blocking'
-  }
-}
 
 export async function getServerSideProps() {
 
