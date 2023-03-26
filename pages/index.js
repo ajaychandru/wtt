@@ -88,7 +88,7 @@ export default function HomePage({allPosts}) {
 
 
 export async function getStaticProps() {
-    let res = await fetch("https://wtt-ajaychandru.vercel.app/api", {
+    let res = await fetch("https://wtt-seven.vercel.app/api/posts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
