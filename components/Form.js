@@ -11,8 +11,7 @@ import Select from '@mui/material/Select';
 import { Box } from "@mui/system";
 import Fab from '@mui/material/Fab';
 import { useRouter } from "next/router"
-import axios from 'axios';
-import { UiFileInputButton } from "./UiFileInputButton";
+
 
 
 
@@ -39,24 +38,13 @@ export default function Form() {
         })
     }
 
-    const onChange = async (formData) => {
-        const config = {
-            headers: { 'content-type': 'multipart/form-data' },
-            onUploadProgress: (event) => {
-                console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
-            },
-        };
-
-        const response = await axios.post('https://www.worldtechtravel.in/api/upload', formData, config);
-
-        const { data, file } = response.data;
-        console.log(file);
-        const filePath = "/images/" + file[0].filename;
+    const onChange = async (event) => {
+    
         setForm((prevValue) => {
             return (
                 {
                     ...prevValue,
-                    imgSrc: filePath
+                    [event.target.name]: event.target.value
                 }
             )
         })
@@ -65,7 +53,7 @@ export default function Form() {
 
     async function submitPost() {
     
-
+   
        
 
         let res = await fetch("https://www.worldtechtravel.in/api/posts", {
@@ -120,11 +108,9 @@ export default function Form() {
                     </Select>
                 </FormControl>
             </Box>
-            <UiFileInputButton
-                label="Upload Single Thumbnail"
-                uploadFileName="theFiles"
-                onChange={onChange}
-            />
+            <Grid my={2} item xs={12}  >
+                <TextField onChange={onChange} sx={{ width: "100% " }} label="Paste Image Url" variant="outlined" value={form.imgSrc} name="imgSrc" />
+            </Grid>
 
             <Grid mt={2} item xs={12}>
                 <Editor getData={handleEditor} />
