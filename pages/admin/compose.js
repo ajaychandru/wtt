@@ -7,6 +7,7 @@ export default function Compose(){
 
 
   return(
-    <Form  />
+    // <Form  />
+    <h1>hello</h1>
   )
 } 
