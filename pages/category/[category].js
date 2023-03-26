@@ -45,7 +45,7 @@ const Category = ({posts}) => {
 
 export async function getServerSideProps() {
 
-  let res = await fetch("https://www.worldtechtravel.in/api/posts", {
+  let res = await fetch("https://worldtechtravel.in/api/posts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

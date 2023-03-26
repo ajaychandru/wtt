@@ -18,7 +18,7 @@ export default function HomePage({ allPosts }) {
             <Head>
                 <title>World Tech Travel</title>
             </Head>
-            <Header />
+         
             <Grid className='container' container mt={4} spacing={2}>
                 {homePost.map((post, i) => {
                     const key = uuidv4();
@@ -90,7 +90,7 @@ export default function HomePage({ allPosts }) {
 
 
 export async function getServerSideProps(context) {
-    let res = await fetch("https://www.worldtechtravel.in/api/posts", {
+    let res = await fetch("http://worltechtravel.in/api/posts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
