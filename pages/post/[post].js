@@ -51,36 +51,42 @@ const Post = ({posts}) => {
   )
 }
 
-export async function getStaticPaths() {
-  
-  let res = await fetch("https://www.worldtechtravel.in/api/posts", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    mode: 'cors', // enable CORS
-   
-  })
+export async function getServerSideProps() {
+  try {
+    const res = await fetch("https://www.worldtechtravel.in/api/posts", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors", // enable CORS
+    });
 
- 
-  let posts = await res.json();
-  console.log(posts);
-  const pathArray = posts.map((post) => {
-    return ({
-      params: {
-        post: post._id
-      }
-    })
-  })
+    const posts = await res.json();
+    const pathArray = posts.map((post) => {
+      return {
+        params: {
+          post: post._id,
+        },
+      };
+    });
 
-  return {
-    paths: pathArray,
-    fallback: false, // can also be true or 'blocking'
+    return {
+      props: {
+        paths: pathArray,
+      },
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        paths: [],
+      },
+    };
   }
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let res = await fetch("https://www.worldtechtravel.in/api/posts", {
     method: "GET",
     headers: {

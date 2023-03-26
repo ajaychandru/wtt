@@ -49,7 +49,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   let res = await fetch("https://www.worldtechtravel.in/api/posts", {
     method: "GET",
