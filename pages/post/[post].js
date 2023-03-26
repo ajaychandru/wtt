@@ -51,39 +51,6 @@ const Post = ({posts}) => {
   )
 }
 
-export async function getServerSideProps() {
-  try {
-    const res = await fetch("https://www.worldtechtravel.in/api/posts", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "cors", // enable CORS
-    });
-
-    const posts = await res.json();
-    const pathArray = posts.map((post) => {
-      return {
-        params: {
-          post: post._id,
-        },
-      };
-    });
-
-    return {
-      props: {
-        paths: pathArray,
-      },
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      props: {
-        paths: [],
-      },
-    };
-  }
-}
 
 
 export async function getServerSideProps() {
