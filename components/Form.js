@@ -65,7 +65,7 @@ export default function Form() {
 
     async function submitPost() {
     
-        const apiUrl="https://wtt-seven.vercel.app/api/posts"? "https://wtt-seven.vercel.app/":"https://wtt-ajaychandru.vercel.app/api/posts";
+        const apiUrl="https://wtt-seven.vercel.app/api/posts";
 
        
 

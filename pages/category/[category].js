@@ -51,8 +51,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps() {
 
-  const apiUrl="https://wtt-seven.vercel.app/api/posts"? "https://wtt-seven.vercel.app/api/posts":"https://wtt-ajaychandru.vercel.app/api/posts";
-
+  const apiUrl="https://wtt-seven.vercel.app/api/posts"
   let res = await fetch(apiUrl, {
     method: "GET",
     headers: {
