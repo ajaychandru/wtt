@@ -15,9 +15,10 @@ import clientPromise from "../../lib/mongodb";
                         .limit(10)
                         .toArray();
         
-                    res.json(posts);
+                    res.status(200).json(posts);
                 } catch (e) {
                     console.error(e);
+                    res.status(500).json(e);
                 }
             } else if (req.method === "POST") {
         
