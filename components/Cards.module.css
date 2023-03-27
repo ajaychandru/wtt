@@ -1,8 +1,69 @@
 
-    @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
-    .font{
-      font-family: 'PT Serif', serif;
-      font-weight: 400;
+.cardImg{
+  max-width: 100%; 
+  width:100%;
+  height:205px;
+  border-radius: 5px;
+  }
+  
+  
+  .imgContainer{
+      display: flex;
+      padding:  0;
+     align-items:  center;
+     
+  }
+  .cardContent{
+     
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  
+  .cardContent a{
+      margin-top: 1.65rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #001f3f;
+      text-decoration: none;
+  }
+  
+  .cardContent a:hover {
+   cursor: pointer;
+   color:#801700;
+  }
+  
+  .cardContent span{
+      color:#0000E0
+  }
+  
+  .hr{
+      width: 50%;
+      border-bottom: dotted 2px gray;
+      position: relative;
+     margin-top: 1rem;
+      left: 25%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+      .imgContainer{
+          padding-right: .5rem;
+          padding-left: 0;
+          
+      }
+      .cardContent{
+          padding-left: 0.5rem;
+      }
+      .hr{
+          display: none;
+      }
+      .cardContainer{
+          background-color: white;
+       
+          border-radius: 10px;
+       
+      }
+      
     }
-    

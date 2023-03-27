@@ -17,7 +17,6 @@ const Post = ({posts}) => {
   return (
     <>
 
-      <Header />
       <Grid container>
 
         <Grid sx={{ padding:{xs:"0 1rem",sm:"0 1rem",md:"0 4rem"}, boxShadow: 1 }} container item xs={12} md={10} >
@@ -54,7 +53,7 @@ const Post = ({posts}) => {
 
 
 export async function getServerSideProps() {
-  let res = await fetch("https://worldtechtravel.in/api/posts", {
+  let res = await fetch("http://worldtechtravel.in/api/posts", {
  
     method: "GET",
     headers: {
