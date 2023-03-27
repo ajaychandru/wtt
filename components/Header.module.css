@@ -1,14 +1,29 @@
 .header{
-   
-    height: 250px;
-    background-image: url("../public/images/backgroung.webp");
-   background-position:52% 52%;
-    background-repeat: no-repeat;
+    background: #0E0B28;  /* fallback for old browsers */
+    padding:  2rem;
+        height: 250px;
+}
+.header h1{
+    text-align: center;
+    margin: 0;
+    color: #A1C2E8;
+}
+.header p{
+    line-height: 2;
+    padding: 0 4rem;
+    text-align: center;
+    color: #A1C2E8;
 }
 
-.header h1{
+@media only screen and (max-width: 600px){
+.header {
+    height: 400px;
+    padding: 1rem;
+}
+.header p{
+    
+    padding: 0 1rem;
    
-    color: black;
-    text-align: center;
-    margin-top: 0px ;
+}
+
 }

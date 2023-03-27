@@ -7,12 +7,12 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
+
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import styles from "./Appbar.module.css"
-import HikingIcon from '@mui/icons-material/Hiking';
+
+
 
 const pages = [{ title: "World", href: "/category/world" }, { title: "Tech", href: "/category/tech" }, { title: "Travel", href: "/category/travel" }];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar className={styles.navbar} elevation={4} position="sticky">
+    <AppBar sx={{boxShadow:"none",backgroundColor:"#001f3f"}}  position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -60,7 +60,7 @@ function ResponsiveAppBar() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
+            <button
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -69,8 +69,8 @@ function ResponsiveAppBar() {
               color="inherit"
           
             >
-              <MenuIcon />
-            </IconButton>
+            ☰
+            </button>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -129,9 +129,9 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton  onClick={handleOpenUserMenu} >
+              <button  onClick={handleOpenUserMenu} >
                 {/* avatar img */}
-              </IconButton>
+              </button>
             </Tooltip>
             <Menu
               sx={{ mt: "45px" }}
