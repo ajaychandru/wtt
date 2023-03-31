@@ -1,5 +1,28 @@
 
 import clientPromise from "../../lib/mongodb";
+import axios from 'axios';
+import sharp from 'sharp';
+
+async function resizeImg(url) {
+    try {
+        const response = await axios.get(url, {
+            responseType: 'arraybuffer'
+        });
+        const imageBuffer = Buffer.from(response.data, 'binary');
+        const resizedImage = await sharp(imageBuffer)
+            .resize(900, 600)
+            .webp({ quality: 80, alphaQuality: 0 })
+            .toBuffer();
+
+        const dataUrl = `data:image/webp;base64,${resizedImage.toString('base64')}`;
+        return dataUrl;
+    } catch (error) {
+        return Promise.reject(error);
+    }
+}
+
+
+
     async function handler(req, res) {
     
 
@@ -23,11 +46,15 @@ import clientPromise from "../../lib/mongodb";
             } else if (req.method === "POST") {
         
                 try {
+                    const formData=req.body.form;
+                    const imgUrl=await resizeImg(formData.imgSrc);
+                    formData.imgSrc=imgUrl;
+
                     const client = await clientPromise;
                     const db = client.db("ajBlogDB");
                     const posts = await db
                         .collection("posts")
-                        .insertOne(req.body.form);
+                        .insertOne(formData);
                     res.json(posts);
         
                 } catch (e) {
@@ -42,7 +69,6 @@ import clientPromise from "../../lib/mongodb";
  
   }
 export default handler
-
 
 
 

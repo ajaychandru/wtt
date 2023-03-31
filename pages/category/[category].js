@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material'
 import { useRouter } from 'next/router'
 import Header from '../../components/Header';
-import MediaCard from '../../components/Card'
+import Card from '../../components/Card'
 import { v4 as uuidv4 } from 'uuid';
 const { convert } = require('html-to-text');
 
@@ -29,7 +29,7 @@ const Category = ({posts}) => {
       }).substring(0,150);
         const key = uuidv4();
         return (<Grid key={key} item xs={12} md={6}>
-          <MediaCard imgSrc={post.imgSrc} link={post._id} contMd={12} md={12} title={post.title} category={post.category} date={post.date} content={cardContent} />
+          <Card imgSrc={post.imgSrc} link={post._id} contMd={12} md={12} title={post.title} category={post.category} date={post.date} content={cardContent} />
         </Grid>
         )
       })}
@@ -45,7 +45,7 @@ const Category = ({posts}) => {
 
 export async function getServerSideProps() {
 
-  let res = await fetch("https://worldtechtravel.in/api/posts", {
+  let res = await fetch("https://www.worldtechtravel.in/api/posts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

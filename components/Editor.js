@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import styles from "./Editor.module.css"
+// import styles from "./Editor.module.css"
 
 const ReactQuill = dynamic(async () => {
     try {
@@ -80,7 +80,7 @@ function handleChange(content){
 
       
 
-            <ReactQuill className={styles.editor}
+            <ReactQuill 
                
                 onChange={handleChange}
                 theme="snow"

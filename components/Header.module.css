@@ -1,29 +1,48 @@
 .header{
     background: #0E0B28;  /* fallback for old browsers */
     padding:  2rem;
-        height: 250px;
+        min-height: 240px;
+        min-width: 100vw;
+        margin-top: 48px;
 }
 .header h1{
     text-align: center;
     margin: 0;
+    min-height: 48px;
+
     color: #A1C2E8;
 }
 .header p{
+  
     line-height: 2;
-    padding: 0 4rem;
+    padding: 0 1rem;
     text-align: center;
     color: #A1C2E8;
+    min-height: 200px;
 }
 
 @media only screen and (max-width: 600px){
-.header {
-    height: 400px;
-    padding: 1rem;
-}
-.header p{
-    
-    padding: 0 1rem;
-   
-}
+    .header{
+        background: #0E0B28;  /* fallback for old browsers */
+        padding:  2rem;
+            min-height: 368px;
+            min-width: 100vw;
+            margin-top: 48px;
+    }
+    .header h1{
+        text-align: center;
+        margin: 0;
+        min-height: 48px;
+      
+        color: #A1C2E8;
+    }
+    .header p{
+      
+        line-height: 2;
+        padding: 0 1rem;
+        text-align: center;
+        color: #A1C2E8;
+        min-height: 320px;
+    }
 
 }

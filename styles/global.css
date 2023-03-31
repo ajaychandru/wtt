@@ -9,13 +9,22 @@ body{
     font-family: 'PT Serif', serif !important;
  font-weight: 400;
 }
+h1,h2,h3,h4,h5,h6,p {
+   
+  
+    font-family: 'PT Serif', serif !important;
+ font-weight: 400;
+}
 
 /* index page */
+
+
 
 
 /* post page css */
 
 .postH1{
+    margin-top: 58px;
     text-align: center;
     font-size: 1.25rem;
 }
@@ -39,10 +48,21 @@ body{
    body{
     background-color: white;
    }
-   .postContent img{
-    width: 100%;
-    height: 250px;
-  max-width: 100%;
-   }
-
+   .postContainer{
+    min-height:3013px;
+    }
 }
+
+
+
+@media only screen and (max-width: 900px){
+    .postContainer{
+        min-height:3850px;
+        }
+ }
+@media only screen and (min-width: 900px){
+
+        .postContainer{
+            min-height:1100px;
+            }
+ }

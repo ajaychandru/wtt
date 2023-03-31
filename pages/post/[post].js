@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import Box from '@mui/material/Box';
 import parse from "html-react-parser"
 import RecentPost from '../../components/RecentPost';
-import Header from '../../components/Header';
+
 
 const Post = ({posts}) => {
   const router = useRouter()
@@ -53,7 +53,7 @@ const Post = ({posts}) => {
 
 
 export async function getServerSideProps() {
-  let res = await fetch("http://worldtechtravel.in/api/posts", {
+  let res = await fetch("https://www.worldtechtravel.in/api/posts", {
  
     method: "GET",
     headers: {

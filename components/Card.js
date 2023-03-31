@@ -1,30 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Grid from '@mui/material/Grid';
 
-import styles from "./Cards.module.css"
+import styles from "./Card.module.css"
 
 
 
-export default function Card(props) {
-function handleClick(){
-    window.location.href = "/post/"+props.link;
-}
+
+export default  function Card(props) { 
+
     return (
 
 
         <Grid className={styles.cardContainer} container>
-            <Grid className={styles.imgContainer} item xs={12} sm={4}>
-
-                    <img src={props.imgSrc} loading={props.loading} className={styles.cardImg}  onClick={handleClick} />
-             
+            <Grid className={styles.imgContainer} item xs={12} sm={12} md={4}>
+            <a href={"/post/"+props.link}>
+            <img src={props.imgSrc}  className={styles.cardImg} alt={props.title} />
+   
+            </a>
 
             </Grid>
 
             <Grid item xs={12} sm={8}>
                 <div className={styles.cardContent} >
 
-                    <a rel="preload" href={"/post/" + props.link} >{props.title}</a>
+                    <a rel="preload" href={"/post/"+props.link} >{props.title}</a>
                     <span>
                         {props.category}
                     </span>
@@ -45,3 +45,5 @@ function handleClick(){
         </Grid>
     );
 }
+
+
