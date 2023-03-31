@@ -19,10 +19,15 @@ export default function MyApp(props) {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>world tech travel</title>
+        <title>world tech travel blog</title>
+        <meta
+          name="description"
+          content="Welcome to World Tech Travel, your go-to destination for the latest news and insights on the intersection of technology, international relations, and travel. We prioritize content on international relations and technology, but also provide valuable travel-related information to enhance your journeys."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
       </Head>
       <ThemeProvider theme={theme}>
-     
+
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Component {...pageProps} />

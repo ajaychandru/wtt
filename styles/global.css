@@ -9,8 +9,16 @@ body{
     font-family: 'PT Serif', serif !important;
  font-weight: 400;
 }
+h1,h2,h3,h4,h5,h6,p {
+   
+  
+    font-family: 'PT Serif', serif !important;
+ font-weight: 400;
+}
 
 /* index page */
+
+
 
 
 /* post page css */
@@ -39,4 +47,20 @@ body{
    body{
     background-color: white;
    }
+   .postContainer{
+    min-height:3013px;
+    }
 }
+
+
+
+@media only screen and (max-width: 900px){
+    .postContainer{
+        min-height:1100px;
+        }
+ }
+@media only screen and (min-width: 900px){
+    .postContainer{
+        min-height:3850px;
+        }
+ }

@@ -56,7 +56,7 @@ export default function Form() {
    
        
 
-        let res = await fetch("https://www.worldtechtravel.in/api/posts", {
+        let res = await fetch("http://localhost:3000/api/posts", {
             method: "POST",
             body: JSON.stringify({ form }),
             headers: {
