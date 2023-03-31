@@ -104,7 +104,7 @@ export default function HomePage({ allPosts }) {
 
 
 export async function getServerSideProps(context) {
-    let res = await fetch("http://localhost:3000/api/posts", {
+    let res = await fetch("https://www.worldtechtravel.in/api/posts", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
